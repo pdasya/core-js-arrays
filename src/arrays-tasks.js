@@ -64,7 +64,7 @@ function findElement(inputArray, value) {
   if (resultArray.length === 0) {
     return -1;
   }
-  return resultArray;
+  return inputArray.indexOf(resultArray[0]);
 }
 
 /**
