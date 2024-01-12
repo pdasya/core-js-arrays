@@ -201,8 +201,8 @@ function insertItem(inputArray, inputItem, inputIndex) {
  *    getHead([ 'a', 'b', 'c', 'd'], 3) => [ 'a', 'b', 'c' ]
  *    getHead([ 'a', 'b', 'c', 'd'], 0) => []
  */
-function getHead(/* arr, n */) {
-  throw new Error('Not implemented');
+function getHead(inputArray, inputNumber) {
+  return inputArray.slice(0, inputNumber);
 }
 
 /**
