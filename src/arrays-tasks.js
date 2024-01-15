@@ -318,8 +318,8 @@ function flattenArray(nestedArray) {
  *   selectMany([[1, 2], [3, 4], [5, 6]], (x) => x) =>   [ 1, 2, 3, 4, 5, 6 ]
  *   selectMany(['one','two','three'], (x) => x.split('')) =>   ['o','n','e','t','w','o','t','h','r','e','e']
  */
-function selectMany(/* arr, childrenSelector */) {
-  throw new Error('Not implemented');
+function selectMany(inputArray, childrenSelector) {
+  return inputArray.flatMap(childrenSelector);
 }
 
 /**
@@ -335,8 +335,14 @@ function selectMany(/* arr, childrenSelector */) {
  *   calculateBalance([ [ 10, 8 ], [ 1, 5 ] ])  => (10 - 8) + (1 - 5) = 2 + -4 = -2
  *   calculateBalance([]) => 0
  */
-function calculateBalance(/* arr */) {
-  throw new Error('Not implemented');
+function calculateBalance(inputArray) {
+  if (inputArray.length === 0) {
+    return 0;
+  }
+
+  return inputArray
+    .map((element) => element[0] - element[1])
+    .reduce((acc, curr) => acc + curr, 0);
 }
 
 /**
